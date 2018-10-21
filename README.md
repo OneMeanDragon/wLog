@@ -1,0 +1,2 @@
+# wLog
+Logging to text.
