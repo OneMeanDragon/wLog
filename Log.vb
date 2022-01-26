@@ -31,7 +31,7 @@ Namespace YOUR_NAMESPACE
             Dim stackTrace As StackTrace = New StackTrace()
             Dim messageout As String = ""
             SyncLock LogLock
-                messageout = DateTime.Now.ToString("MM-dd HH:mm:ss") & "." & DateTime.Now.Millisecond.ToString("D3") & " [" & Level & "] " & stackTrace.GetFrame(1).GetMethod().Name & ": " & Content
+                messageout = $"{DateTime.Now.ToString("MM-dd HH:mm:ss")}.{DateTime.Now.Millisecond.ToString("D3")} [{Level}] {stackTrace.GetFrame(1).GetMethod().Name}: {Content}"
                 LogWriter.WriteLine(messageout)
                 LogWriter.Flush()
             End SyncLock
